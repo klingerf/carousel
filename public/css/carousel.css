@@ -1,0 +1,19 @@
+body {
+  background: url('/img/background.jpg') top left no-repeat;
+}
+
+.header {
+  position: absolute;
+  top: 67px;
+  left: 20px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #FFF;
+  z-index: -99;
+}
+
+.container-narrow {
+  margin: 60px auto;
+  max-width: 800px;
+}
