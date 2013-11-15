@@ -34,7 +34,7 @@ Carousel.prototype = {
   start: function() {
     var t = this;
     t.displayTweet();
-    setInterval(function(){ t.displayTweet() }, 18000);
+    setInterval(function(){ t.displayTweet() }, 12000);
   }
 }
 

@@ -17,7 +17,7 @@ OAUTH_TOKEN = OAuth::AccessToken.new(
 ENDPOINT = [
   "/1.1/search/tweets.json?q=#{CGI.escape(ENV['TWITTER_SEARCH_TERM'])}",
   "result_type=recent",
-  "count=25"
+  "count=50"
 ].join("&")
 
 get '/' do
@@ -29,7 +29,9 @@ get '/tweet_ids' do
   case response.code
   when "200"
     if statuses = JSON.parse(response.body)['statuses']
-      statuses.map {|s| s['id_str'] }.to_json
+      statuses.map do |status|
+        status['retweeted_status'] ? nil : status['id_str']
+      end.compact.to_json
     else
       "[]"
     end
