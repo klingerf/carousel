@@ -5,7 +5,7 @@ require 'json'
 OAUTH_CONSUMER = OAuth::Consumer.new(
   ENV['TWITTER_CONSUMER_KEY'],
   ENV['TWITTER_CONSUMER_SECRET'],
-  :site => 'http://api.twitter.com'
+  :site => 'https://api.twitter.com'
 )
 
 OAUTH_TOKEN = OAuth::AccessToken.new(
